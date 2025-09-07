@@ -7,20 +7,20 @@ using System.Runtime.CompilerServices;
 
 
 
-int maxSpace = 9;
+int maxSpace = 15;
 string[] clothes = new string[maxSpace];
 int amountOfClothes = 0;
 
 
-int maxSpaceDrawer = 3;
+int maxSpaceDrawer = 5;
 string[] drawer = new string[maxSpaceDrawer];
 int drawerClothesAmount = 0;
 
-int maxSpaceShelve = 3;
-string[] shelve = new string[maxSpaceShelve];
-int shelveClothesAmount = 0;
+int maxSpaceShelf = 5;
+string[] shelf = new string[maxSpaceShelf];
+int shelfClothesAmount = 0;
 
-int maxSpaceHanger = 3;
+int maxSpaceHanger = 5;
 string[] hanger = new string[maxSpaceHanger];
 int hangerClothesAmount = 0;
 
@@ -35,11 +35,11 @@ while (isRunning)
   Console.WriteLine("Welcome! to your wardrobe menu");
   if (amountOfClothes == 1)
   {
-    Console.WriteLine($"You have [{amountOfClothes}] cloth in total.\n");
+    Console.WriteLine($"You have [{amountOfClothes}] garment in total.\n");
   }
   else
   {
-    Console.WriteLine($"You have [{amountOfClothes}] clothes in total.\n");
+    Console.WriteLine($"You have [{amountOfClothes}] garments in total.\n");
   }
   Console.ResetColor();
 
@@ -87,7 +87,7 @@ while (isRunning)
         Console.WriteLine("\nPlease select a compartment or\nWrite 'main' to go to main menu.\n");
         Console.ResetColor();
         Console.WriteLine("Write [1] for Drawer\n"
-        + "Write [2] for Shelve\n"
+        + "Write [2] for Shelf\n"
         + "Write [3] for Hanger");
 
 
@@ -173,6 +173,150 @@ while (isRunning)
             }
             break;
 
+
+          case "2":
+            Console.Clear();
+            if (shelfClothesAmount == maxSpaceShelf)
+            {
+              Console.ForegroundColor = ConsoleColor.Red;
+              Console.WriteLine("Sorry your Shelf is full..");
+              Console.ResetColor();
+              break;
+            }
+
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("\nWrite 'done' to go to previous menu.\nWrite 'main' to go to main menu.");
+            Console.ResetColor();
+            Console.WriteLine("Please write what you want to add to your shelf:\n");
+
+
+            while (shelfClothesAmount != maxSpaceShelf || input != "done")
+            {
+              if (shelfClothesAmount == maxSpaceShelf)
+              {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Sorry your Shelf is full..");
+                Console.ResetColor();
+                break;
+              }
+
+
+              Console.ForegroundColor = ConsoleColor.Green;
+              Console.Write("\n►");
+              Console.ResetColor();
+              input = Console.ReadLine()?.ToLower().Trim();
+
+              if (input == "main")
+              {
+                Console.Clear();
+                subIsRunning = false;
+                break;
+
+              }
+              else if (input == "done")
+              {
+                // Console.Clear();
+                break;
+              }
+              else if (string.IsNullOrWhiteSpace(input) || string.IsNullOrEmpty(input))
+              {
+                Console.WriteLine("Please write a vlid peice of cloth...");
+              }
+              else
+              {
+                Console.Write($"\nYou added ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(input);
+                Console.ResetColor();
+                Console.Write(" to you shelf.\n\n");
+
+                for (int i = 0; i < maxSpaceShelf; i++)
+                {
+                  if (string.IsNullOrEmpty(shelf[i]))
+                  {
+                    shelf[i] = input;
+                    shelfClothesAmount++;
+                    amountOfClothes++;
+                    break;
+                  }
+                }
+              }
+            }
+            break;
+
+
+          case "3":
+            Console.Clear();
+            if (hangerClothesAmount == maxSpaceHanger)
+            {
+              Console.ForegroundColor = ConsoleColor.Red;
+              Console.WriteLine("Sorry your hanger is full..");
+              Console.ResetColor();
+              break;
+            }
+
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("\nWrite 'done' to go to previous menu.\nWrite 'main' to go to main menu.");
+            Console.ResetColor();
+            Console.WriteLine("Please write what you want to add to your hanger:\n");
+
+
+            while (hangerClothesAmount != maxSpaceHanger || input != "done")
+            {
+              if (hangerClothesAmount == maxSpaceHanger)
+              {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Sorry your hanger is full..");
+                Console.ResetColor();
+                break;
+              }
+
+
+              Console.ForegroundColor = ConsoleColor.Green;
+              Console.Write("\n►");
+              Console.ResetColor();
+              input = Console.ReadLine()?.ToLower().Trim();
+
+              if (input == "main")
+              {
+                Console.Clear();
+                subIsRunning = false;
+                break;
+
+              }
+              else if (input == "done")
+              {
+                // Console.Clear();
+                break;
+              }
+              else if (string.IsNullOrWhiteSpace(input) || string.IsNullOrEmpty(input))
+              {
+                Console.WriteLine("Please write a vlid peice of cloth...");
+              }
+              else
+              {
+                Console.Write($"\nYou added ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(input);
+                Console.ResetColor();
+                Console.Write(" to you hanger.\n\n");
+
+                for (int i = 0; i < maxSpaceHanger; i++)
+                {
+                  if (string.IsNullOrEmpty(hanger[i]))
+                  {
+                    hanger[i] = input;
+                    hangerClothesAmount++;
+                    amountOfClothes++;
+                    break;
+                  }
+                }
+              }
+            }
+            break;
+
+
+
           default:
             Console.Clear();
             Console.WriteLine("Please enter a valid option..");
@@ -221,18 +365,18 @@ while (isRunning)
 
       Console.ForegroundColor = ConsoleColor.DarkYellow;
       Console.WriteLine("\n_____________");
-      Console.WriteLine("Shelv");
+      Console.WriteLine("Shelf");
       Console.ResetColor();
-      for (int i = 0; i < maxSpaceShelve; i++)
+      for (int i = 0; i < maxSpaceShelf; i++)
       {
-        if (!string.IsNullOrEmpty(shelve[i]))
+        if (!string.IsNullOrEmpty(shelf[i]))
         {
-          Console.WriteLine($"# - {shelve[i]}");
+          Console.WriteLine($"# - {shelf[i]}");
 
         }
 
       }
-      if (shelveClothesAmount == 0)
+      if (shelfClothesAmount == 0)
       {
 
         Console.WriteLine("Empty");
@@ -289,18 +433,18 @@ while (isRunning)
 
       Console.ForegroundColor = ConsoleColor.DarkYellow;
       Console.WriteLine("\n_____________");
-      Console.WriteLine("Shelv");
+      Console.WriteLine("Shelf");
       Console.ResetColor();
-      for (int i = 0; i < maxSpaceShelve; i++)
+      for (int i = 0; i < maxSpaceShelf; i++)
       {
-        if (!string.IsNullOrEmpty(shelve[i]))
+        if (!string.IsNullOrEmpty(shelf[i]))
         {
-          Console.WriteLine($"# - {shelve[i]}");
+          Console.WriteLine($"# - {shelf[i]}");
 
         }
 
       }
-      if (shelveClothesAmount == 0)
+      if (shelfClothesAmount == 0)
       {
 
         Console.WriteLine("Empty");
@@ -334,7 +478,8 @@ while (isRunning)
         Console.Write("\n►");
         Console.ResetColor();
 
-        if (drawerClothesAmount == 0 && shelveClothesAmount == 0 && hangerClothesAmount == 0)
+
+        if (drawerClothesAmount == 0 && shelfClothesAmount == 0 && hangerClothesAmount == 0)
         {
           Console.ForegroundColor = ConsoleColor.Red;
           Console.WriteLine("Your wardrobe is completely empty!");
@@ -348,6 +493,7 @@ while (isRunning)
 
         if (input == "done")
         {
+          Console.Clear();
           break;
         }
 
@@ -362,10 +508,10 @@ while (isRunning)
           }
         }
 
-        for (int i = 0; i < maxSpaceShelve; i++)
+        for (int i = 0; i < maxSpaceShelf; i++)
         {
 
-          if (input == shelve[i])
+          if (input == shelf[i])
           {
             itemFound = true;
             break;
@@ -386,6 +532,7 @@ while (isRunning)
 
         if (!itemFound || input == "")
         {
+
           Console.WriteLine("Please Enter a valid item...");
 
         }
@@ -408,12 +555,12 @@ while (isRunning)
             }
           }
 
-          for (int j = 0; j < maxSpaceShelve; j++)
+          for (int j = 0; j < maxSpaceShelf; j++)
           {
-            if (input == shelve[j])
+            if (input == shelf[j])
             {
-              shelve[j] = "";
-              shelveClothesAmount--;
+              shelf[j] = "";
+              shelfClothesAmount--;
               amountOfClothes--;
               break;
 

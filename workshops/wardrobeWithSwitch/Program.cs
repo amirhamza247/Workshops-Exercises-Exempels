@@ -216,8 +216,13 @@ while (isRunning)
 
         }
 
+
       }
-      Console.WriteLine("Empty");
+      if (drawerClothesAmount == 0)
+      {
+
+        Console.WriteLine("Empty");
+      }
 
       Console.ForegroundColor = ConsoleColor.DarkYellow;
       Console.WriteLine("\n_____________");
@@ -232,7 +237,11 @@ while (isRunning)
         }
 
       }
-      Console.WriteLine("Empty");
+      if (shelveClothesAmount == 0)
+      {
+
+        Console.WriteLine("Empty");
+      }
 
       Console.ForegroundColor = ConsoleColor.DarkYellow;
       Console.WriteLine("\n_____________");
@@ -247,21 +256,78 @@ while (isRunning)
         }
 
       }
-      Console.WriteLine("Empty");
+      if (hangerClothesAmount == 0)
+      {
+
+        Console.WriteLine("Empty");
+      }
 
       break;
 
 
     case "3":
       Console.Clear();
-      Console.WriteLine("This is what you have in your wardrobe.\nPlease write what you want to remove:\nWrite 'done' to go to main menu.\n");
-      for (int i = 0; i < maxSpace; i++)
+      Console.WriteLine("\nPlease write what you want to remove:\nWrite 'done' to go to main menu.\n");
+      Console.WriteLine("\nThis is what you have in your wardrobe:\n");
+      Console.ForegroundColor = ConsoleColor.DarkYellow;
+      Console.WriteLine("_____________");
+      Console.WriteLine("Drawer");
+      Console.ResetColor();
+      for (int i = 0; i < maxSpaceDrawer; i++)
       {
-        if (!string.IsNullOrEmpty(clothes[i]))
+        if (!string.IsNullOrEmpty(drawer[i]))
         {
-          Console.WriteLine($"# - {clothes[i]}");
+          Console.WriteLine($"# - {drawer[i]}");
+
         }
+
+
       }
+      if (drawerClothesAmount == 0)
+      {
+
+        Console.WriteLine("Empty");
+      }
+
+      Console.ForegroundColor = ConsoleColor.DarkYellow;
+      Console.WriteLine("\n_____________");
+      Console.WriteLine("Shelv");
+      Console.ResetColor();
+      for (int i = 0; i < maxSpaceShelve; i++)
+      {
+        if (!string.IsNullOrEmpty(shelve[i]))
+        {
+          Console.WriteLine($"# - {shelve[i]}");
+
+        }
+
+      }
+      if (shelveClothesAmount == 0)
+      {
+
+        Console.WriteLine("Empty");
+      }
+
+      Console.ForegroundColor = ConsoleColor.DarkYellow;
+      Console.WriteLine("\n_____________");
+      Console.WriteLine("Hanger");
+      Console.ResetColor();
+      for (int i = 0; i < maxSpaceHanger; i++)
+      {
+        if (!string.IsNullOrEmpty(hanger[i]))
+        {
+          Console.WriteLine($"# - {hanger[i]}");
+
+        }
+
+      }
+      if (hangerClothesAmount == 0)
+      {
+
+        Console.WriteLine("Empty");
+      }
+
+
 
       while (input != "done")
       {

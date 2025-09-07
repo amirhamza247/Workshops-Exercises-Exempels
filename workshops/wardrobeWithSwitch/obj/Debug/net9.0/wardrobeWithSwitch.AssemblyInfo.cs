@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wardrobeWithSwitch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+852fce390b0264f7ae6320c271aa4fec8f23257b")]
 [assembly: System.Reflection.AssemblyProductAttribute("wardrobeWithSwitch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wardrobeWithSwitch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

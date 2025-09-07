@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amir_\\repos\\wardrobeWithSwitch\\wardrobeWithSwitch.csproj",
+      "projectUniqueName": "C:\\Users\\amir_\\repos\\workshops\\wardrobeWithSwitch\\wardrobeWithSwitch.csproj",
       "projectName": "wardrobeWithSwitch",
-      "projectPath": "C:\\Users\\amir_\\repos\\wardrobeWithSwitch\\wardrobeWithSwitch.csproj",
+      "projectPath": "C:\\Users\\amir_\\repos\\workshops\\wardrobeWithSwitch\\wardrobeWithSwitch.csproj",
       "packagesPath": "C:\\Users\\amir_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amir_\\repos\\wardrobeWithSwitch\\obj\\",
+      "outputPath": "C:\\Users\\amir_\\repos\\workshops\\wardrobeWithSwitch\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\amir_\\AppData\\Roaming\\NuGet\\NuGet.Config"

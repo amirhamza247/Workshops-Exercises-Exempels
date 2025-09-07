@@ -84,11 +84,12 @@ while (isRunning)
       {
         // Inner switch for submenu.
         Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.WriteLine("\nPlease select a compartment:\nWrite 'done' to go to main menu.\n");
+        Console.WriteLine("\nPlease select a compartment or\nWrite 'main' to go to main menu.\n");
         Console.ResetColor();
         Console.WriteLine("Write [1] for Drawer\n"
         + "Write [2] for Shelve\n"
         + "Write [3] for Hanger");
+
 
 
         Console.Write("\n►");
@@ -97,7 +98,7 @@ while (isRunning)
         switch (input)
         {
 
-          case "done":
+          case "main":
             Console.Clear();
             subIsRunning = false;
             break;
@@ -128,7 +129,10 @@ while (isRunning)
                 break;
               }
 
-              Console.Write("►");
+
+              Console.ForegroundColor = ConsoleColor.Green;
+              Console.Write("\n►");
+              Console.ResetColor();
               input = Console.ReadLine()?.ToLower().Trim();
 
               if (input == "main")
@@ -140,6 +144,7 @@ while (isRunning)
               }
               else if (input == "done")
               {
+                // Console.Clear();
                 break;
               }
               else if (string.IsNullOrWhiteSpace(input) || string.IsNullOrEmpty(input))
@@ -257,7 +262,10 @@ while (isRunning)
 
     case "3":
       Console.Clear();
+      Console.ForegroundColor = ConsoleColor.DarkYellow;
       Console.WriteLine("\nPlease write what you want to remove:\nWrite 'done' to go to main menu.\n");
+      Console.ResetColor();
+
       Console.WriteLine("\nThis is what you have in your wardrobe:\n");
       Console.ForegroundColor = ConsoleColor.DarkYellow;
       Console.WriteLine("_____________");
@@ -322,8 +330,17 @@ while (isRunning)
       while (input != "done")
       {
 
-
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.Write("\n►");
+        Console.ResetColor();
+
+        if (drawerClothesAmount == 0 && shelveClothesAmount == 0 && hangerClothesAmount == 0)
+        {
+          Console.ForegroundColor = ConsoleColor.Red;
+          Console.WriteLine("Your wardrobe is completely empty!");
+          Console.ResetColor();
+          break;
+        }
 
         input = Console.ReadLine()?.ToLower().Trim();
 
@@ -336,9 +353,28 @@ while (isRunning)
 
 
         bool itemFound = false;
-        for (int i = 0; i < maxSpace; i++)
+        for (int i = 0; i < maxSpaceDrawer; i++)
         {
-          if (input == clothes[i])
+          if (input == drawer[i])
+          {
+            itemFound = true;
+            break;
+          }
+        }
+
+        for (int i = 0; i < maxSpaceShelve; i++)
+        {
+
+          if (input == shelve[i])
+          {
+            itemFound = true;
+            break;
+          }
+        }
+
+        for (int i = 0; i < maxSpaceHanger; i++)
+        {
+          if (input == hanger[i])
           {
             itemFound = true;
             break;
@@ -346,10 +382,14 @@ while (isRunning)
 
         }
 
+
+
         if (!itemFound || input == "")
         {
           Console.WriteLine("Please Enter a valid item...");
+
         }
+
         else
         {
           Console.Write("You removed ");
@@ -357,14 +397,38 @@ while (isRunning)
           Console.Write(input);
           Console.ResetColor();
           Console.Write(" from your wardrobe.\n");
-          for (int j = 0; j < maxSpace; j++)
+          for (int j = 0; j < maxSpaceDrawer; j++)
           {
-
-            if (input == clothes[j])
+            if (input == drawer[j])
             {
-              clothes[j] = "";
+              drawer[j] = "";
+              drawerClothesAmount--;
               amountOfClothes--;
-              //break;
+
+            }
+          }
+
+          for (int j = 0; j < maxSpaceShelve; j++)
+          {
+            if (input == shelve[j])
+            {
+              shelve[j] = "";
+              shelveClothesAmount--;
+              amountOfClothes--;
+              break;
+
+            }
+          }
+
+          for (int j = 0; j < maxSpaceHanger; j++)
+          {
+            if (input == hanger[j])
+            {
+              hanger[j] = "";
+              hangerClothesAmount--;
+              amountOfClothes--;
+
+
             }
 
           }

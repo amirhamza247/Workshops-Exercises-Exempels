@@ -66,7 +66,6 @@ while (isRunning)
 
       break;
 
-
     case "1":
       Console.Clear();
       if (amountOfClothes == maxSpace)
@@ -76,8 +75,6 @@ while (isRunning)
         Console.ResetColor();
         break;
       }
-
-
 
       bool subIsRunning = true;
       while (subIsRunning)
@@ -91,13 +88,11 @@ while (isRunning)
         + "Write [3] for Hanger");
 
 
-
         Console.Write("\n►");
         input = Console.ReadLine()?.ToLower().Trim();
 
         switch (input)
         {
-
           case "main":
             Console.Clear();
             subIsRunning = false;
@@ -129,7 +124,6 @@ while (isRunning)
                 break;
               }
 
-
               Console.ForegroundColor = ConsoleColor.Green;
               Console.Write("\n►");
               Console.ResetColor();
@@ -140,7 +134,6 @@ while (isRunning)
                 Console.Clear();
                 subIsRunning = false;
                 break;
-
               }
               else if (input == "done")
               {
@@ -211,7 +204,6 @@ while (isRunning)
                 Console.Clear();
                 subIsRunning = false;
                 break;
-
               }
               else if (input == "done")
               {
@@ -315,8 +307,6 @@ while (isRunning)
             }
             break;
 
-
-
           default:
             Console.Clear();
             Console.WriteLine("Please enter a valid option..");
@@ -324,20 +314,11 @@ while (isRunning)
             {
               subIsRunning = false;
             }
-
             break;
-
         }
         // End of inner switch for submenu.
 
       }
-
-
-
-
-      // Console.WriteLine("\nPlease write what you want to add:\nWrite 'done' to go to main menu.\n");
-
-
       break;
 
     case "2":
@@ -391,13 +372,11 @@ while (isRunning)
         if (!string.IsNullOrEmpty(hanger[i]))
         {
           Console.WriteLine($"# - {hanger[i]}");
-
         }
-
       }
+
       if (hangerClothesAmount == 0)
       {
-
         Console.WriteLine("Empty");
       }
 
@@ -420,14 +399,11 @@ while (isRunning)
         if (!string.IsNullOrEmpty(drawer[i]))
         {
           Console.WriteLine($"# - {drawer[i]}");
-
         }
-
-
       }
+
       if (drawerClothesAmount == 0)
       {
-
         Console.WriteLine("Empty");
       }
 
@@ -440,13 +416,11 @@ while (isRunning)
         if (!string.IsNullOrEmpty(shelf[i]))
         {
           Console.WriteLine($"# - {shelf[i]}");
-
         }
-
       }
+
       if (shelfClothesAmount == 0)
       {
-
         Console.WriteLine("Empty");
       }
 
@@ -459,17 +433,13 @@ while (isRunning)
         if (!string.IsNullOrEmpty(hanger[i]))
         {
           Console.WriteLine($"# - {hanger[i]}");
-
         }
-
       }
+
       if (hangerClothesAmount == 0)
       {
-
         Console.WriteLine("Empty");
       }
-
-
 
       while (input != "done")
       {
@@ -488,7 +458,6 @@ while (isRunning)
         }
 
         input = Console.ReadLine()?.ToLower().Trim();
-
 
 
         if (input == "done")
@@ -529,14 +498,10 @@ while (isRunning)
         }
 
 
-
         if (!itemFound || input == "")
         {
-
           Console.WriteLine("Please Enter a valid item...");
-
         }
-
         else
         {
           Console.Write("You removed ");
@@ -551,7 +516,6 @@ while (isRunning)
               drawer[j] = "";
               drawerClothesAmount--;
               amountOfClothes--;
-
             }
           }
 
@@ -563,7 +527,6 @@ while (isRunning)
               shelfClothesAmount--;
               amountOfClothes--;
               break;
-
             }
           }
 
@@ -574,16 +537,12 @@ while (isRunning)
               hanger[j] = "";
               hangerClothesAmount--;
               amountOfClothes--;
-
-
             }
-
           }
         }
       }
 
       break;
-
 
 
     default:
@@ -592,10 +551,7 @@ while (isRunning)
 
       break;
 
-
-
   }
-
 }
 
 

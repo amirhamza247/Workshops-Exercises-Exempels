@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 
 
-int maxSpace = 5;
+int maxSpace = 9;
 string[] clothes = new string[maxSpace];
 int amountOfClothes = 0;
 
@@ -43,7 +43,7 @@ while (isRunning)
   }
   Console.ResetColor();
 
-  Console.WriteLine("write [add] to add item.");
+  Console.WriteLine("write [1] to add item.");
   Console.WriteLine("write [2] to view your wardrobe.");
   Console.WriteLine("write [3] to remove item.");
   Console.WriteLine("write 'exit' if you wish to exit.");
@@ -51,7 +51,10 @@ while (isRunning)
   Console.WriteLine("__________________________________\n");
   Console.ResetColor();
 
-  string? input = Console.ReadLine()?.ToLower().Trim(); ;
+  Console.Write("►");
+  string? input = Console.ReadLine()?.ToLower().Trim();
+
+
 
 
   switch (input)
@@ -64,7 +67,7 @@ while (isRunning)
       break;
 
 
-    case "add":
+    case "1":
       Console.Clear();
       if (amountOfClothes == maxSpace)
       {
@@ -76,29 +79,31 @@ while (isRunning)
 
 
 
-
-      // Inner switch for submenu.
-      Console.WriteLine("\nPlease select a compartment:\n"
-      + "[1] Drawer\n"
-      + "[2] Shelve\n"
-      + "[3] Hanger");
-      input = Console.ReadLine()?.ToLower().Trim();
-
-      switch (input)
+      bool subIsRunning = true;
+      while (subIsRunning)
       {
-        case "1":
-          if (drawerClothesAmount == maxSpaceDrawer)
-          {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Sorry your Drawer is full..");
-            Console.ResetColor();
+        // Inner switch for submenu.
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.WriteLine("\nPlease select a compartment:\nWrite 'done' to go to main menu.\n");
+        Console.ResetColor();
+        Console.WriteLine("Write [1] for Drawer\n"
+        + "Write [2] for Shelve\n"
+        + "Write [3] for Hanger");
+
+
+        Console.Write("\n►");
+        input = Console.ReadLine()?.ToLower().Trim();
+
+        switch (input)
+        {
+
+          case "done":
+            Console.Clear();
+            subIsRunning = false;
             break;
-          }
 
-          Console.WriteLine("\nPlease write what you want to add to your drawer:\nWrite 'done' to go to main menu.\n");
-
-          while (drawerClothesAmount != maxSpaceDrawer || input != "done")
-          {
+          case "1":
+            Console.Clear();
             if (drawerClothesAmount == maxSpaceDrawer)
             {
               Console.ForegroundColor = ConsoleColor.Red;
@@ -107,98 +112,83 @@ while (isRunning)
               break;
             }
 
-            Console.Write("►");
-            input = Console.ReadLine()?.ToLower().Trim();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("\nWrite 'done' to go to previous menu.\nWrite 'main' to go to main menu.");
+            Console.ResetColor();
+            Console.WriteLine("Please write what you want to add to your drawer:\n");
 
-            if (input == "done")
-            {
-              break;
 
-            }
-            else if (string.IsNullOrWhiteSpace(input) || string.IsNullOrEmpty(input))
+            while (drawerClothesAmount != maxSpaceDrawer || input != "done")
             {
-              Console.WriteLine("Please write a vlid peice of cloth...");
-            }
-            else
-            {
-              Console.Write($"\nYou added ");
-              Console.ForegroundColor = ConsoleColor.Green;
-              Console.Write(input);
-              Console.ResetColor();
-              Console.Write(" to you drawer.\n\n");
-
-              for (int i = 0; i < maxSpaceDrawer; i++)
+              if (drawerClothesAmount == maxSpaceDrawer)
               {
-                if (string.IsNullOrEmpty(drawer[i]))
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Sorry your Drawer is full..");
+                Console.ResetColor();
+                break;
+              }
+
+              Console.Write("►");
+              input = Console.ReadLine()?.ToLower().Trim();
+
+              if (input == "main")
+              {
+                Console.Clear();
+                subIsRunning = false;
+                break;
+
+              }
+              else if (input == "done")
+              {
+                break;
+              }
+              else if (string.IsNullOrWhiteSpace(input) || string.IsNullOrEmpty(input))
+              {
+                Console.WriteLine("Please write a vlid peice of cloth...");
+              }
+              else
+              {
+                Console.Write($"\nYou added ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(input);
+                Console.ResetColor();
+                Console.Write(" to you drawer.\n\n");
+
+                for (int i = 0; i < maxSpaceDrawer; i++)
                 {
-                  drawer[i] = input;
-                  drawerClothesAmount++;
-                  amountOfClothes++;
-                  break;
+                  if (string.IsNullOrEmpty(drawer[i]))
+                  {
+                    drawer[i] = input;
+                    drawerClothesAmount++;
+                    amountOfClothes++;
+                    break;
+                  }
                 }
               }
             }
-          }
-          break;
+            break;
 
-        default:
-          Console.WriteLine("Please enter a valid option..");
-          break;
-
-      }
-      // End of inner switch for submenu.
-      break;
-
-
-
-
-      Console.WriteLine("\nPlease write what you want to add:\nWrite 'done' to go to main menu.\n");
-
-      while (amountOfClothes != maxSpace || input != "done")
-      {
-        if (amountOfClothes == maxSpace)
-        {
-          Console.ForegroundColor = ConsoleColor.Red;
-          Console.WriteLine("\nSorry no more space left in wardrobe. Please remove old items to add new ones. \n");
-          Console.ResetColor();
-          break;
-        }
-
-        Console.Write("►");
-        input = Console.ReadLine()?.ToLower().Trim();
-
-
-        if (input == "done")
-        {
-          break;
-
-        }
-        else if (string.IsNullOrWhiteSpace(input) || string.IsNullOrEmpty(input))
-        {
-          Console.WriteLine("Please write a vlid peice of cloth...");
-        }
-        else
-        {
-          Console.Write($"\nYou added ");
-          Console.ForegroundColor = ConsoleColor.Green;
-          Console.Write(input);
-          Console.ResetColor();
-          Console.Write(" to you wardrobe.\n\n");
-
-          for (int i = 0; i < maxSpace; i++)
-          {
-
-            string current = clothes[i];
-            if (current == "" || current == null)
+          default:
+            Console.Clear();
+            Console.WriteLine("Please enter a valid option..");
+            if (input == "done")
             {
-              clothes[i] = input;
-              amountOfClothes++;
-
-              break;
+              subIsRunning = false;
             }
-          }
+
+            break;
+
         }
+        // End of inner switch for submenu.
+
       }
+
+
+
+
+      // Console.WriteLine("\nPlease write what you want to add:\nWrite 'done' to go to main menu.\n");
+
+
       break;
 
     case "2":

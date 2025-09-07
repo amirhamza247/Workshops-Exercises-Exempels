@@ -1,0 +1,14 @@
+C:\Users\amir_\repos\exemples\exSwitchCase\bin\Debug\net9.0\exSwitchCase.exe
+C:\Users\amir_\repos\exemples\exSwitchCase\bin\Debug\net9.0\exSwitchCase.deps.json
+C:\Users\amir_\repos\exemples\exSwitchCase\bin\Debug\net9.0\exSwitchCase.runtimeconfig.json
+C:\Users\amir_\repos\exemples\exSwitchCase\bin\Debug\net9.0\exSwitchCase.dll
+C:\Users\amir_\repos\exemples\exSwitchCase\bin\Debug\net9.0\exSwitchCase.pdb
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\exSwitchCase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\exSwitchCase.AssemblyInfoInputs.cache
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\exSwitchCase.AssemblyInfo.cs
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\exSwitchCase.csproj.CoreCompileInputs.cache
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\exSwitchCase.dll
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\refint\exSwitchCase.dll
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\exSwitchCase.pdb
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\exSwitchCase.genruntimeconfig.cache
+C:\Users\amir_\repos\exemples\exSwitchCase\obj\Debug\net9.0\ref\exSwitchCase.dll

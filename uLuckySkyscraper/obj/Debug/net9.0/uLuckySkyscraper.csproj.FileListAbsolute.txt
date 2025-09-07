@@ -1,0 +1,14 @@
+C:\Users\amir_\repos\uLuckySkyscraper\bin\Debug\net9.0\uLuckySkyscraper.exe
+C:\Users\amir_\repos\uLuckySkyscraper\bin\Debug\net9.0\uLuckySkyscraper.deps.json
+C:\Users\amir_\repos\uLuckySkyscraper\bin\Debug\net9.0\uLuckySkyscraper.runtimeconfig.json
+C:\Users\amir_\repos\uLuckySkyscraper\bin\Debug\net9.0\uLuckySkyscraper.dll
+C:\Users\amir_\repos\uLuckySkyscraper\bin\Debug\net9.0\uLuckySkyscraper.pdb
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\uLuckySkyscraper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\uLuckySkyscraper.AssemblyInfoInputs.cache
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\uLuckySkyscraper.AssemblyInfo.cs
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\uLuckySkyscraper.csproj.CoreCompileInputs.cache
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\uLuckySkyscraper.dll
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\refint\uLuckySkyscraper.dll
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\uLuckySkyscraper.pdb
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\uLuckySkyscraper.genruntimeconfig.cache
+C:\Users\amir_\repos\uLuckySkyscraper\obj\Debug\net9.0\ref\uLuckySkyscraper.dll

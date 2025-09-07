@@ -1,0 +1,14 @@
+C:\Users\amir_\repos\uFizzbuzz\bin\Debug\net9.0\uFizzbuzz.exe
+C:\Users\amir_\repos\uFizzbuzz\bin\Debug\net9.0\uFizzbuzz.deps.json
+C:\Users\amir_\repos\uFizzbuzz\bin\Debug\net9.0\uFizzbuzz.runtimeconfig.json
+C:\Users\amir_\repos\uFizzbuzz\bin\Debug\net9.0\uFizzbuzz.dll
+C:\Users\amir_\repos\uFizzbuzz\bin\Debug\net9.0\uFizzbuzz.pdb
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\uFizzbuzz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\uFizzbuzz.AssemblyInfoInputs.cache
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\uFizzbuzz.AssemblyInfo.cs
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\uFizzbuzz.csproj.CoreCompileInputs.cache
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\uFizzbuzz.dll
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\refint\uFizzbuzz.dll
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\uFizzbuzz.pdb
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\uFizzbuzz.genruntimeconfig.cache
+C:\Users\amir_\repos\uFizzbuzz\obj\Debug\net9.0\ref\uFizzbuzz.dll

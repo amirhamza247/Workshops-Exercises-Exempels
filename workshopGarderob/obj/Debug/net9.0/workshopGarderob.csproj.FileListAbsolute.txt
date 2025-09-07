@@ -1,0 +1,14 @@
+C:\Users\amir_\repos\workshopGarderob\bin\Debug\net9.0\workshopGarderob.exe
+C:\Users\amir_\repos\workshopGarderob\bin\Debug\net9.0\workshopGarderob.deps.json
+C:\Users\amir_\repos\workshopGarderob\bin\Debug\net9.0\workshopGarderob.runtimeconfig.json
+C:\Users\amir_\repos\workshopGarderob\bin\Debug\net9.0\workshopGarderob.dll
+C:\Users\amir_\repos\workshopGarderob\bin\Debug\net9.0\workshopGarderob.pdb
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\workshopGarderob.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\workshopGarderob.AssemblyInfoInputs.cache
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\workshopGarderob.AssemblyInfo.cs
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\workshopGarderob.csproj.CoreCompileInputs.cache
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\workshopGarderob.dll
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\refint\workshopGarderob.dll
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\workshopGarderob.pdb
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\workshopGarderob.genruntimeconfig.cache
+C:\Users\amir_\repos\workshopGarderob\obj\Debug\net9.0\ref\workshopGarderob.dll

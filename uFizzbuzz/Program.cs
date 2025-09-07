@@ -1,0 +1,56 @@
+﻿/* 
+for (int i = 1; i <= 100; i++)
+{
+
+
+  if (i % 3 == 0 && i % 5 == 0)
+  {
+    Console.WriteLine("FizzBuzz");
+  }
+  else if (i % 3 == 0)
+  {
+    Console.WriteLine("Fizz");
+  }
+  else if (i % 5 == 0)
+  {
+    Console.WriteLine("Buzz");
+
+  }
+
+
+  else
+  {
+    Console.WriteLine(i);
+  }
+} */
+
+
+
+
+
+
+
+for (int i = 1; i <= 2000; i++)
+{
+
+
+  if (i % 100 == 13 && i % 10 == 4)
+  {
+    Console.WriteLine("FizzBuzz");
+  }
+  else if (i % 100 == 13)
+  {
+    Console.WriteLine("OturOturOturOturOtur");
+  }
+  else if (i % 10 == 4)
+  {
+    Console.WriteLine("OturOturOturOturOtur");
+
+  }
+
+
+  else
+  {
+    Console.WriteLine(i);
+  }
+}

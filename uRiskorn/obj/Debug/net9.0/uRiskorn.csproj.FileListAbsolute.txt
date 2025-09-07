@@ -1,0 +1,14 @@
+C:\Users\amir_\repos\uRiskorn\bin\Debug\net9.0\uRiskorn.exe
+C:\Users\amir_\repos\uRiskorn\bin\Debug\net9.0\uRiskorn.deps.json
+C:\Users\amir_\repos\uRiskorn\bin\Debug\net9.0\uRiskorn.runtimeconfig.json
+C:\Users\amir_\repos\uRiskorn\bin\Debug\net9.0\uRiskorn.dll
+C:\Users\amir_\repos\uRiskorn\bin\Debug\net9.0\uRiskorn.pdb
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\uRiskorn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\uRiskorn.AssemblyInfoInputs.cache
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\uRiskorn.AssemblyInfo.cs
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\uRiskorn.csproj.CoreCompileInputs.cache
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\uRiskorn.dll
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\refint\uRiskorn.dll
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\uRiskorn.pdb
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\uRiskorn.genruntimeconfig.cache
+C:\Users\amir_\repos\uRiskorn\obj\Debug\net9.0\ref\uRiskorn.dll

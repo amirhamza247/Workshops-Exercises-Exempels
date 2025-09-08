@@ -386,7 +386,7 @@ while (isRunning)
     case "3":
       Console.Clear();
       Console.ForegroundColor = ConsoleColor.DarkYellow;
-      Console.WriteLine("\nPlease write what you want to remove:\nWrite 'done' to go to main menu.\n");
+      Console.WriteLine("\nWrite 'done' to go to main menu.\nWrite 'remove all' to completely empty your wardrobe.\nPlease write what you want to remove:");
       Console.ResetColor();
 
       Console.WriteLine("\nThis is what you have in your wardrobe:\n");
@@ -465,6 +465,41 @@ while (isRunning)
           Console.Clear();
           break;
         }
+        else if (input == "remove all")
+        {
+          Console.Clear();
+          for (int j = 0; j < maxSpaceDrawer; j++)
+          {
+            if (drawerClothesAmount > 0)
+            {
+              drawer[j] = "";
+              drawerClothesAmount--;
+              amountOfClothes--;
+            }
+          }
+
+          for (int j = 0; j < maxSpaceShelf; j++)
+          {
+            if (shelfClothesAmount > 0)
+            {
+              shelf[j] = "";
+              shelfClothesAmount--;
+              amountOfClothes--;
+
+            }
+          }
+
+          for (int j = 0; j < maxSpaceHanger; j++)
+          {
+            if (hangerClothesAmount > 0)
+            {
+              hanger[j] = "";
+              hangerClothesAmount--;
+              amountOfClothes--;
+            }
+          }
+          break;
+        }
 
 
         bool itemFound = false;
@@ -479,7 +514,6 @@ while (isRunning)
 
         for (int i = 0; i < maxSpaceShelf; i++)
         {
-
           if (input == shelf[i])
           {
             itemFound = true;
@@ -494,7 +528,6 @@ while (isRunning)
             itemFound = true;
             break;
           }
-
         }
 
 

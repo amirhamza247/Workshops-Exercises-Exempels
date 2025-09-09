@@ -1,0 +1,15 @@
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\wardrobeWithClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\wardrobeWithClass.AssemblyInfoInputs.cache
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\wardrobeWithClass.AssemblyInfo.cs
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\wardrobeWithClass.csproj.CoreCompileInputs.cache
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\wardrobeWithClass.sourcelink.json
+C:\Users\amir_\repos\workshops\wardrobeWithClass\bin\Debug\net9.0\wardrobeWithClass.exe
+C:\Users\amir_\repos\workshops\wardrobeWithClass\bin\Debug\net9.0\wardrobeWithClass.deps.json
+C:\Users\amir_\repos\workshops\wardrobeWithClass\bin\Debug\net9.0\wardrobeWithClass.runtimeconfig.json
+C:\Users\amir_\repos\workshops\wardrobeWithClass\bin\Debug\net9.0\wardrobeWithClass.dll
+C:\Users\amir_\repos\workshops\wardrobeWithClass\bin\Debug\net9.0\wardrobeWithClass.pdb
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\wardrobeWithClass.dll
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\refint\wardrobeWithClass.dll
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\wardrobeWithClass.pdb
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\wardrobeWithClass.genruntimeconfig.cache
+C:\Users\amir_\repos\workshops\wardrobeWithClass\obj\Debug\net9.0\ref\wardrobeWithClass.dll

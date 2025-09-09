@@ -1,0 +1,15 @@
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\bin\Debug\net9.0\exFreeCodeCamp.exe
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\bin\Debug\net9.0\exFreeCodeCamp.deps.json
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\bin\Debug\net9.0\exFreeCodeCamp.runtimeconfig.json
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\bin\Debug\net9.0\exFreeCodeCamp.dll
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\bin\Debug\net9.0\exFreeCodeCamp.pdb
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\exFreeCodeCamp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\exFreeCodeCamp.AssemblyInfoInputs.cache
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\exFreeCodeCamp.AssemblyInfo.cs
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\exFreeCodeCamp.csproj.CoreCompileInputs.cache
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\exFreeCodeCamp.sourcelink.json
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\exFreeCodeCamp.dll
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\refint\exFreeCodeCamp.dll
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\exFreeCodeCamp.pdb
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\exFreeCodeCamp.genruntimeconfig.cache
+C:\Users\amir_\repos\exemples\exFreeCodeCamp\obj\Debug\net9.0\ref\exFreeCodeCamp.dll

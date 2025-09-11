@@ -12,9 +12,4 @@ public class Clothing
     Label = label;
     Color = color;
   }
-
-
-
-
-
 }

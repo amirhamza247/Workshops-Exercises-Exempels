@@ -1,17 +1,17 @@
-using System.Diagnostics.Contracts;
 namespace App;
 
-public class Drawer
+public class Shelf
 {
   public Clothing[] Clothes;
   public int Capacity;
-  public int DrawerClothesAmount;
+  public int ShelfClothesAmount;
 
-  public Drawer(int capacity)
+
+  public Shelf(int capacity)
   {
     Clothes = new Clothing[capacity];
     Capacity = capacity;
-    DrawerClothesAmount = 0;
+    ShelfClothesAmount = 0;
   }
 
   public void Add(string label, string color)
@@ -25,21 +25,17 @@ public class Drawer
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write(Clothes[i].Color + ", " + Clothes[i].Label);
         Console.ResetColor();
-        Console.Write(" to your Drawer.");
-        DrawerClothesAmount++;
-
+        Console.Write(" to your Shelf.");
         break;
       }
     }
   }
 
-
-
   public void Show()
   {
     Console.ForegroundColor = ConsoleColor.DarkYellow;
-    Console.WriteLine("______________");
-    Console.WriteLine("Drawer:\n");
+    Console.WriteLine("\n______________");
+    Console.WriteLine("Shelf:\n");
     Console.ResetColor();
     for (int i = 0; i < Capacity; i++)
     {
@@ -52,8 +48,7 @@ public class Drawer
     Console.ForegroundColor = ConsoleColor.DarkYellow;
     //Console.WriteLine("__________________________________________\n");
     Console.ResetColor();
-
   }
 
-}
 
+}

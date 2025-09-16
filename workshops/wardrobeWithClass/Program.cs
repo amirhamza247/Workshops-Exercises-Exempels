@@ -1,37 +1,25 @@
-﻿using App;
+﻿using System.Data.SqlTypes;
+using System.Reflection;
+using App;
 Wardrobe wardrobe = new Wardrobe();
-/* Drawer drawer = new Drawer(5);
-Shelf shelf = new Shelf(5);
-Hanger hanger = new Hanger(5); */
-
 
 
 bool running = true;
 
 while (running)
 {
-  Console.ForegroundColor = ConsoleColor.DarkYellow;
-  Console.WriteLine("\n__________________________________");
-  Console.WriteLine("Welcome! to your wardrobe menu\n");
-  Console.ResetColor();
-  Console.WriteLine("[1] to show");
-  Console.WriteLine("[2] to add");
-  Console.WriteLine("[3] remove");
-  Console.WriteLine("enter 'quit' to exit.");
-  Console.ForegroundColor = ConsoleColor.DarkYellow;
-  Console.WriteLine("__________________________________\n");
-  Console.ResetColor();
 
-  Console.Write("►");
+  Utilities.GenerateMenu(end: "exit", Choices: new[] { "to show", "to add", "to remove" });
+
+  Utilities.Colorize(ConsoleColor.Yellow, "►", "Write");
   string? input = Console.ReadLine();
 
   switch (input)
   {
     case "1": // Show
       Console.Clear();
-      Console.ForegroundColor = ConsoleColor.DarkYellow;
-      Console.WriteLine("This is what you have in your wardrobe!");
-      Console.ResetColor();
+      Utilities.Colorize(ConsoleColor.DarkYellow, "This is what you have in your wardrobe!");
+
       wardrobe.drawer.Show();
       wardrobe.shelf.Show();
       wardrobe.hanger.Show();
@@ -47,36 +35,20 @@ while (running)
 
       while (subIsRunning)
       {
-        Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.WriteLine("\n__________________________________");
-        Console.WriteLine("Please select a compartment:\n");
-        Console.ResetColor();
-        Console.WriteLine("[1] for drawer");
-        Console.WriteLine("[2] for shelf");
-        Console.WriteLine("[3] for hanger");
-        Console.WriteLine("enter 'done' to exit.");
-        Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.WriteLine("__________________________________\n");
-        Console.ResetColor();
+        Utilities.GenerateMenu(Choices: new[] { "for drawer", "for shelf", "for hanger" });
 
-        Console.Write("►");
+        Utilities.Colorize(ConsoleColor.Yellow, "►", "Write");
         string? inputSub = Console.ReadLine();
 
         switch (inputSub)
         {
           case "1": // Drawer
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("\n______________________");
-            Console.WriteLine("Enter 'done' to exit.");
-            Console.WriteLine("\nPlease write what you\nwant to add to your Drawer:");
-            Console.WriteLine("______________________\n");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.DarkYellow, "\n______________________\nEnter 'done' to exit.\n\nPlease write what you\nwant to add to your Drawer:\n______________________\n");
+
 
             Console.WriteLine(":- label?");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("►");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.Green, "►", "Write");
             string label = Console.ReadLine()?.ToLower().Trim() ?? "";
             if (label == "exit" || label == "done")
             {
@@ -84,9 +56,8 @@ while (running)
               break;
             }
             Console.WriteLine("\n:- color?");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("►");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.Green, "►", "Write");
+
             string color = Console.ReadLine()?.ToLower().Trim() ?? "";
             wardrobe.drawer.Add(label, color);
 
@@ -94,17 +65,10 @@ while (running)
 
           case "2": // Shelf
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("\n______________________");
-            Console.WriteLine("Enter 'done' to exit.");
-            Console.WriteLine("\nPlease write what you\nwant to add to your Drawer:");
-            Console.WriteLine("______________________\n");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.DarkYellow, "\n______________________\nEnter 'done' to exit.\nPlease write what you\nwant to add to your Drawer:\n______________________\n");
 
             Console.WriteLine(":- label?");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("►");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.Green, "►", "Write");
             label = Console.ReadLine()?.ToLower().Trim() ?? "";
             if (label == "exit" || label == "done")
             {
@@ -112,9 +76,7 @@ while (running)
               break;
             }
             Console.WriteLine("\n:- color?");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("►");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.Green, "►", "Write");
             color = Console.ReadLine()?.ToLower().Trim() ?? "";
             wardrobe.shelf.Add(label, color);
 
@@ -122,17 +84,11 @@ while (running)
 
           case "3": // Hanger
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("\n______________________");
-            Console.WriteLine("Enter 'done' to exit.");
-            Console.WriteLine("\nPlease write what you\nwant to add to your Drawer:");
-            Console.WriteLine("______________________\n");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.DarkYellow, "\n______________________\nEnter 'done' to exit.\nPlease write what you\nwant to add to your Drawer:\n______________________\n");
 
             Console.WriteLine(":- label?");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("►");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.Green, "►", "Write");
+
             label = Console.ReadLine()?.ToLower().Trim() ?? "";
             if (label == "exit" || label == "done")
             {
@@ -140,9 +96,8 @@ while (running)
               break;
             }
             Console.WriteLine("\n:- color?");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("►");
-            Console.ResetColor();
+            Utilities.Colorize(ConsoleColor.Green, "►", "Write");
+
             color = Console.ReadLine()?.ToLower().Trim() ?? "";
             wardrobe.hanger.Add(label, color);
 
@@ -157,18 +112,58 @@ while (running)
 
       break;
 
-    /*     case "3": // Remove
-          Console.Clear();
-          wardrobe.Remove();
-          Console.WriteLine("\nPress Enter to continue\n");
-          Console.Write("►");
-          Console.ReadLine();
-          Console.Clear();
-          break; */
+    case "3": // Remove
+      Console.Clear();
+      Utilities.Colorize(ConsoleColor.DarkYellow, "This is what you have in your wardrobe!");
+      wardrobe.drawer.Show();
+      wardrobe.shelf.Show();
+      wardrobe.hanger.Show();
+
+      Utilities.Colorize(ConsoleColor.DarkYellow, "\n______________________\nEnter 'done' to exit.\nPlease select a compartment to remvoe cloth from:\n");
+
+      input = Console.ReadLine();
+
+      bool removeSubMenu = true;
+      while (removeSubMenu)
+      {
+        //Console.Clear();
+
+        switch (input)
+        {
+          case "1":
+            wardrobe.drawer.Remove();
+            removeSubMenu = false;
+            break;
+
+          case "2":
+            wardrobe.shelf.Remove();
+            removeSubMenu = false;
+            break;
+
+          case "3":
+            wardrobe.hanger.Remove();
+            removeSubMenu = false;
+            break;
+          default:
+            Console.WriteLine("Please select a valid option...");
+            break;
+        }
+        break;
+
+
+      }
+      wardrobe.drawer.Remove();
+      Console.WriteLine("\nPress Enter to continue\n");
+      Console.Write("►");
+      Console.ReadLine();
+      Console.Clear();
+      break;
 
 
     case "quit":
       running = false;
       break;
+
+
   }
 }

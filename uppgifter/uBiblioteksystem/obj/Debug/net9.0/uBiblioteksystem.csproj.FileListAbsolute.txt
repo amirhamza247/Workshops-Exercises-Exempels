@@ -1,0 +1,15 @@
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\bin\Debug\net9.0\uBiblioteksystem.exe
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\bin\Debug\net9.0\uBiblioteksystem.dll
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\bin\Debug\net9.0\uBiblioteksystem.deps.json
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\bin\Debug\net9.0\uBiblioteksystem.runtimeconfig.json
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\bin\Debug\net9.0\uBiblioteksystem.pdb
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\uBiblioteksystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\uBiblioteksystem.AssemblyInfoInputs.cache
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\uBiblioteksystem.AssemblyInfo.cs
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\uBiblioteksystem.csproj.CoreCompileInputs.cache
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\uBiblioteksystem.sourcelink.json
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\uBiblioteksystem.dll
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\refint\uBiblioteksystem.dll
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\uBiblioteksystem.pdb
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\uBiblioteksystem.genruntimeconfig.cache
+C:\Users\amir_\repos\uppgifter\uBiblioteksystem\obj\Debug\net9.0\ref\uBiblioteksystem.dll

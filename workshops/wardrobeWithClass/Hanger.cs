@@ -4,7 +4,7 @@ namespace App;
 
 public class Hanger
 {
-  public new Clothing[] Clothes;
+  public Clothing[] Clothes;
   public int Capacity;
   public int AmountClothesHanger;
 
@@ -36,15 +36,16 @@ public class Hanger
 
   public void Show()
   {
+    // Utilities.Colorize(ConsoleColor.DarkYellow, "You are in your 'hanger' now");
     Console.ForegroundColor = ConsoleColor.DarkYellow;
     Console.WriteLine("\n______________");
-    Console.WriteLine("Hanger:\n");
+    Console.WriteLine("[3] Hanger:\n");
     Console.ResetColor();
     for (int i = 0; i < Capacity; i++)
     {
       if (Clothes[i] != null && Clothes[i].Label != "")
       {
-        Console.WriteLine("# - " + Clothes[i].Color + ", " + Clothes[i].Label);
+        Console.WriteLine($"[{i + 1}] {Clothes[i].Color}, {Clothes[i].Label}");
         Console.WriteLine();
       }
     }
@@ -53,6 +54,28 @@ public class Hanger
     Console.ResetColor();
   }
 
+  public void Remove()
+  {
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.Write("►");
+    Console.ResetColor();
+    string input = Console.ReadLine()?.ToLower().Trim() ?? "";
+    int.TryParse(input, out int selectedIndex);
 
-
+    for (int i = 0; i < Capacity; i++)
+    {
+      if (Clothes[i] != null && selectedIndex == (i + 1))
+      {
+        Console.Write($"\nYou removed ");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write(Clothes[i].Color + ", " + Clothes[i].Label);
+        Console.ResetColor();
+        Console.Write(" from you hanger.\n\n");
+        Clothes[i].Label = "";
+        Clothes[i].Color = "";
+        // HangerClothesAmount--;
+        break;
+      }
+    }
+  }
 }

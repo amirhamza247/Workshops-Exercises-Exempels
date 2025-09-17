@@ -50,6 +50,7 @@ while (isRunning)
             subisrunning = false;
 
             break;
+
           case "3":
             Console.Clear();
             Utilities.Colorize(ConsoleColor.DarkYellow, "\nPlease write the name of a genre!\n", "WriteLine");
@@ -68,7 +69,15 @@ while (isRunning)
       }
       break;
 
+    case "3":
+      Console.Clear();
 
+      Utilities.Colorize(ConsoleColor.DarkYellow, "\nPlease write ISBN for the book you wan to remove!\n", "WriteLine");
+      Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
+      string removeIsbn = Console.ReadLine() ?? "";
+      myLibrary.removeBook(removeIsbn);
+
+      break;
 
     default:
       Console.WriteLine("Please enter a valid option..");

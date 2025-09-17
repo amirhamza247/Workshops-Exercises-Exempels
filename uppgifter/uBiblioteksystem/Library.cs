@@ -4,20 +4,22 @@ namespace uBiblioteksystem;
 public class Library
 {
 
-  public List<Book> myBookList;
+  //  public List<Book> myBookList;
+  public Dictionary<string, Book> myBookByIsbn = new Dictionary<string, Book>();
+
   public int BookAmount;
 
   public Library()
   {
-    myBookList = new List<Book>()
-    {
-      new Book("Sagan om ringen", "Tolkien", "Fantasy", "9789173291580"),
-      new Book("Mörker", "Amir", "Science", "9789173291590"),
-      new Book("Matlagning är livet", "Sabo", "Cooking", "9789173291600"),
-      new Book("Rymden", "Tolkien", "Science", "9789173291610"),
-      new Book("Mat är mat", "Sabo", "Cooking", "9789173291620")
-    }
-    ;
+    // myBookList = new List<Book>();
+
+    myBookByIsbn.Add("111111", new Book("Ljuset", "Amir", "Science", "111111"));
+    myBookByIsbn.Add("222222", new Book("Mörker", "Amir", "Science", "222222"));
+    myBookByIsbn.Add("333333", new Book("Matlagning är livet", "Sabo", "Cooking", "333333"));
+    myBookByIsbn.Add("444444", new Book("Rymden", "Tolkien", "Science", "444444"));
+    myBookByIsbn.Add("555555", new Book("Mat är mat", "Sabo", "Cooking", "555555"));
+
+
     BookAmount = 0;
   }
 
@@ -47,13 +49,33 @@ public class Library
 
     Utilities.Colorize(ConsoleColor.DarkYellow, "\nEnter your book ISBN:", "WriteLine");
     Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
-    string inputIsbn = Console.ReadLine()?.ToLower().Trim() ?? "";
+    bool isbnRunning = true;
+    Console.WriteLine("Print this before loop!");
+    string inputIsbn = "";
+
+    while (isbnRunning)
+    {
+      inputIsbn = Console.ReadLine()?.ToLower().Trim() ?? "";
+      if (myBookByIsbn.ContainsKey(inputIsbn))
+      {
+        Utilities.Colorize(ConsoleColor.Red, "ISBN is taken, Try with another one:  ", "WriteLine");
+
+      }
+      else
+      {
+
+        break;
+      }
+    }
+
+
     Console.Write("book ISBN: ");
     Utilities.Colorize(ConsoleColor.Green, inputIsbn, "Write");
     Console.Write(" is saved!\n");
 
     Book mybook1 = new Book(inputTitle, inputAuthor, inputGenre, inputIsbn);
-    myBookList.Add(mybook1);
+    myBookByIsbn.Add(mybook1.ISBN, mybook1);
+
     BookAmount++;
 
 
@@ -63,9 +85,9 @@ public class Library
 
   public void showAllBooks()
   {
-    Console.WriteLine($"You have [{BookAmount}] books in your Library.");
+    Console.WriteLine($"You have [{myBookByIsbn.Count}] books in your Library.");
     int num = 1;
-    foreach (Book book in myBookList)
+    foreach ((string isbn, Book book) in myBookByIsbn)
     {
       Console.WriteLine($"\nBook nr: {num}\n{book}\n");
       num++;
@@ -78,7 +100,7 @@ public class Library
 
     Console.WriteLine($"\nBooks filterd by author: {Utilities.Capitalize(author)}\n");
     int num = 1;
-    foreach (Book book in myBookList)
+    foreach ((string isbn, Book book) in myBookByIsbn)
     {
       if (book.Author.ToLower().Trim() == author.ToLower().Trim())
       {
@@ -93,13 +115,36 @@ public class Library
     Console.Clear();
     Console.WriteLine($"\nBooks filterd by genre: {Utilities.Capitalize(genre)}\n");
     int num = 1;
-    foreach (Book book in myBookList)
+    foreach ((string isbn, Book book) in myBookByIsbn)
     {
       if (book.Genre.ToLower().Trim() == genre.ToLower().Trim())
       {
         Console.WriteLine($"{num}: {Utilities.Capitalize(book.Title)}, by {Utilities.Capitalize(book.Author)}.");
         num++;
       }
+    }
+  }
+
+
+  public void removeBook(string isbn)
+  {
+
+
+    foreach ((string num, Book book) in myBookByIsbn)
+    {
+      if (myBookByIsbn.ContainsKey(isbn))
+      {
+        Console.Write("book: ");
+        Utilities.Colorize(ConsoleColor.Red, book.Title, "Write");
+        Console.Write($", by {book.Author} is removed!\n");
+        myBookByIsbn.Remove(isbn);
+        break;
+      }
+      else
+      {
+        Console.WriteLine("Opps! the ISBN is incorrect.\nTry again:");
+      }
+
     }
   }
 

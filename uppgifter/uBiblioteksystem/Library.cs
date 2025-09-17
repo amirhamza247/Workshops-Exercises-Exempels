@@ -126,26 +126,39 @@ public class Library
   }
 
 
-  public void removeBook(string isbn)
+  public void removeBook()
   {
-
-
-    foreach ((string num, Book book) in myBookByIsbn)
+    Utilities.Colorize(ConsoleColor.DarkYellow, "\nHere is all your books:");
+    foreach ((string isbn, Book book) in myBookByIsbn)
     {
-      if (myBookByIsbn.ContainsKey(isbn))
+      Console.WriteLine($"\nBook: {book.Title}, by {book.Author}, ISBN:{book.ISBN}\n");
+
+    }
+
+    Utilities.Colorize(ConsoleColor.DarkYellow, "\nPlease write ISBN for the book you wan to remove!\n", "WriteLine");
+    bool isRemoveRunning = true;
+    while (isRemoveRunning)
+    {
+      Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
+      string removeIsbn = Console.ReadLine()?.Trim() ?? "";
+
+
+      if (removeIsbn != null && myBookByIsbn.TryGetValue(removeIsbn, out Book book))
       {
         Console.Write("book: ");
         Utilities.Colorize(ConsoleColor.Red, book.Title, "Write");
         Console.Write($", by {book.Author} is removed!\n");
-        myBookByIsbn.Remove(isbn);
-        break;
+        myBookByIsbn.Remove(removeIsbn);
+        isRemoveRunning = false;
+
       }
       else
       {
-        Console.WriteLine("Opps! the ISBN is incorrect.\nTry again:");
-      }
+        Console.WriteLine("\nOpps! the ISBN does not exist.\nTry again:");
 
+      }
     }
+
   }
 
 

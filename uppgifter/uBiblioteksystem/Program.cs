@@ -71,11 +71,7 @@ while (isRunning)
 
     case "3":
       Console.Clear();
-
-      Utilities.Colorize(ConsoleColor.DarkYellow, "\nPlease write ISBN for the book you wan to remove!\n", "WriteLine");
-      Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
-      string removeIsbn = Console.ReadLine() ?? "";
-      myLibrary.removeBook(removeIsbn);
+      myLibrary.removeBook();
 
       break;
 

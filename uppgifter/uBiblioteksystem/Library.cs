@@ -23,64 +23,86 @@ public class Library
     BookAmount = 0;
   }
 
+  private string GetUserInput(string prompt)
+  {
+    string userInput;
+    do
+    {
+      Utilities.Colorize(ConsoleColor.DarkYellow, $"\n{prompt}:", "WriteLine");
+      Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
+      userInput = Console.ReadLine()?.ToLower().Trim() ?? "";
+
+    }
+    while (!Utilities.EmptyCheck(userInput));
+
+    if (userInput == "done")
+    {
+      return "done";
+    }
+
+    return userInput;
+  }
 
   public void addBook()
   {
-    Utilities.Colorize(ConsoleColor.DarkYellow, "\nEnter your book title:", "WriteLine");
-    Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
-    string inputTitle = Console.ReadLine()?.ToLower().Trim() ?? "";
-    Console.Write("book title: ");
-    Utilities.Colorize(ConsoleColor.Green, inputTitle, "Write");
-    Console.Write(" is saved!\n");
-
-    Utilities.Colorize(ConsoleColor.DarkYellow, "\nEnter your book author:", "WriteLine");
-    Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
-    string inputAuthor = Console.ReadLine()?.ToLower().Trim() ?? "";
-    Console.Write("book author: ");
-    Utilities.Colorize(ConsoleColor.Green, inputAuthor, "Write");
-    Console.Write(" is saved!\n");
-
-    Utilities.Colorize(ConsoleColor.DarkYellow, "\nEnter your book genre:", "WriteLine");
-    Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
-    string inputGenre = Console.ReadLine()?.ToLower().Trim() ?? "";
-    Console.Write("book genre: ");
-    Utilities.Colorize(ConsoleColor.Green, inputGenre, "Write");
-    Console.Write(" is saved!\n");
-
-    Utilities.Colorize(ConsoleColor.DarkYellow, "\nEnter your book ISBN:", "WriteLine");
-    Utilities.Colorize(ConsoleColor.DarkYellow, "► ", "Write");
-    bool isbnRunning = true;
-    Console.WriteLine("Print this before loop!");
-    string inputIsbn = "";
-
-    while (isbnRunning)
+    while (true)
     {
-      inputIsbn = Console.ReadLine()?.ToLower().Trim() ?? "";
-      if (myBookByIsbn.ContainsKey(inputIsbn))
-      {
-        Utilities.Colorize(ConsoleColor.Red, "ISBN is taken, Try with another one:  ", "WriteLine");
 
-      }
-      else
-      {
+      Utilities.Colorize(ConsoleColor.DarkYellow, "Write 'done' to exit.\n\n");
+      string inputTitle = GetUserInput("Enter your book tilte");
+      if (inputTitle == "done") { return; }
 
-        break;
+      Console.Write("book title: ");
+      Utilities.Colorize(ConsoleColor.Green, inputTitle, "Write");
+      Console.Write(" is saved!\n");
+
+      string inputAuthor = GetUserInput("Enter your book author");
+      if (inputAuthor == "done") { return; }
+
+      Console.Write("book author: ");
+      Utilities.Colorize(ConsoleColor.Green, inputAuthor, "Write");
+      Console.Write(" is saved!\n");
+
+      string inputGenre = GetUserInput("Enter your book genre");
+      if (inputGenre == "done") { return; }
+
+      Console.Write("book genre: ");
+      Utilities.Colorize(ConsoleColor.Green, inputGenre, "Write");
+      Console.Write(" is saved!\n");
+
+      string inputIsbn = "";
+      bool isbnRunning = true;
+      while (isbnRunning)
+      {
+        inputIsbn = GetUserInput("Enter your book ISBN");
+        if (inputIsbn == "done") { return; }
+
+        if (myBookByIsbn.ContainsKey(inputIsbn))
+        {
+          Utilities.Colorize(ConsoleColor.Red, "ISBN is taken, Try with another one:  ", "WriteLine");
+
+        }
+        else
+        {
+
+          Console.Write("book ISBN: ");
+          Utilities.Colorize(ConsoleColor.Green, inputIsbn, "Write");
+          Console.Write(" is saved!\n");
+
+          break;
+        }
       }
+
+
+
+      Book mybook1 = new Book(inputTitle, inputAuthor, inputGenre, inputIsbn);
+      myBookByIsbn.Add(mybook1.ISBN, mybook1);
+
+      break;
+
+
     }
-
-
-    Console.Write("book ISBN: ");
-    Utilities.Colorize(ConsoleColor.Green, inputIsbn, "Write");
-    Console.Write(" is saved!\n");
-
-    Book mybook1 = new Book(inputTitle, inputAuthor, inputGenre, inputIsbn);
-    myBookByIsbn.Add(mybook1.ISBN, mybook1);
-
-    BookAmount++;
-
-
   }
-
 
 
   public void showAllBooks()

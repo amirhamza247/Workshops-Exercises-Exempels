@@ -29,4 +29,31 @@ public class Utilities
   }
 
 
+  public static bool EmptyCheck(string? input)
+  {
+    if (string.IsNullOrEmpty(input))
+    {
+      Console.WriteLine("Please write a valid text (not empty).");
+      return false;
+    }
+    return true;
+  }
+
+  public static bool NumCheck(string? input)
+  {
+    if (int.TryParse(input, out _))
+    {
+      Console.WriteLine("Please write a valid number (not text).");
+      return false;
+    }
+    return true;
+  }
+
+
+
+
 }
+
+
+
+
